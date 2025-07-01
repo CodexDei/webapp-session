@@ -1,0 +1,9 @@
+org\aguzman\apiservlet\webapp\headers\services\ProductoServiceImpl.class
+org\aguzman\apiservlet\webapp\headers\services\LoginService.class
+org\aguzman\apiservlet\webapp\headers\controllers\ProductoServlet.class
+org\aguzman\apiservlet\webapp\headers\services\ProductoService.class
+org\aguzman\apiservlet\webapp\headers\controllers\LoginServlet.class
+org\aguzman\apiservlet\webapp\headers\services\LoginServiceSessionImpl.class
+org\aguzman\apiservlet\webapp\headers\models\Producto.class
+org\aguzman\apiservlet\webapp\headers\services\LoginServiceCookieImpl.class
+org\aguzman\apiservlet\webapp\headers\controllers\LogoutServlet.class
