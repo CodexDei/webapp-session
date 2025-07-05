@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Optional;
 
 @WebServlet({"/productos.html", "/productos"})
-public class ProductoServlet extends HttpServlet {
+public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductoService service = new ProductoServiceImpl();
-        List<Product> products = service.listar();
+        ProductService service = new ProductServiceImpl();
+        List<Product> products = service.toList();
 
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
@@ -44,6 +44,7 @@ public class ProductoServlet extends HttpServlet {
             out.println("<th>tipo</th>");
             if(usernameOptional.isPresent()) {
                 out.println("<th>precio</th>");
+                out.println("<th>add</th>");
             }
             out.println("</tr>");
             products.forEach(p -> {
@@ -53,6 +54,11 @@ public class ProductoServlet extends HttpServlet {
                 out.println("<td>" + p.getType() + "</td>");
                 if(usernameOptional.isPresent()) {
                     out.println("<td>" + p.getPrice() + "</td>");
+                    out.println("<td><a href=\""
+                            + req.getContextPath()
+                            + "add-cart?id="
+                            + p.getId()
+                            + "\">add to cart</a></td>");
                 }
                 out.println("</tr>");
             });

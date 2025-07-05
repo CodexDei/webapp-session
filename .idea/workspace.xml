@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04724ab1-dc6a-40cc-b0b3-aa961137134f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/ItemCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/AddCarServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
