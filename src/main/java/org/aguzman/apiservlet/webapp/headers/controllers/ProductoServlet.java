@@ -5,7 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.aguzman.apiservlet.webapp.headers.models.Producto;
+import org.aguzman.apiservlet.webapp.headers.models.Product;
 import org.aguzman.apiservlet.webapp.headers.services.*;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class ProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ProductoService service = new ProductoServiceImpl();
-        List<Producto> productos = service.listar();
+        List<Product> products = service.listar();
 
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
@@ -46,13 +46,13 @@ public class ProductoServlet extends HttpServlet {
                 out.println("<th>precio</th>");
             }
             out.println("</tr>");
-            productos.forEach(p -> {
+            products.forEach(p -> {
                 out.println("<tr>");
                 out.println("<td>" + p.getId() + "</td>");
-                out.println("<td>" + p.getNombre() + "</td>");
-                out.println("<td>" + p.getTipo() + "</td>");
+                out.println("<td>" + p.getName() + "</td>");
+                out.println("<td>" + p.getType() + "</td>");
                 if(usernameOptional.isPresent()) {
-                    out.println("<td>" + p.getPrecio() + "</td>");
+                    out.println("<td>" + p.getPrice() + "</td>");
                 }
                 out.println("</tr>");
             });
