@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet({"/productos.html", "/productos"})
+@WebServlet({"/products.html", "/products"})
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,10 +55,10 @@ public class ProductServlet extends HttpServlet {
                 if(usernameOptional.isPresent()) {
                     out.println("<td>" + p.getPrice() + "</td>");
                     out.println("<td><a href=\""
-                            + req.getContextPath()
-                            + "add-cart?id="
-                            + p.getId()
-                            + "\">add to cart</a></td>");
+                                    + req.getContextPath()
+                                    + "/add-cart?id="
+                                    + p.getId()
+                                    + "\">add to cart</a></td>");
                 }
                 out.println("</tr>");
             });

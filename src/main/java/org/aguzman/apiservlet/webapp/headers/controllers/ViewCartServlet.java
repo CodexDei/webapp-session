@@ -16,4 +16,5 @@ public class ViewCartServlet extends HttpServlet {
 
         getServletContext().getRequestDispatcher("/cart.jsp").forward(req,resp);
     }
+
 }

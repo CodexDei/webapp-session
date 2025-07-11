@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04724ab1-dc6a-40cc-b0b3-aa961137134f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ViewCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/UpdateCartServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/AddCarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/AddCarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ViewCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ViewCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/ItemCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/ItemCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/services/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/webapp-session/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/webapp-session/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -33,22 +44,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Maven.tomcat.executor": "Run",
-    "Maven.webapp-session [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/PROJECTS_DEVELOPER/JAVA/JavaEE/webapp_session/repository_webapp_session/webapp-session",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven.tomcat.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp-session [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/PROJECTS_DEVELOPER/JAVA/JavaEE/webapp_session/repository_webapp_session/webapp-session&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.aguzman.apiservlet.webapp.headers.controllers" />

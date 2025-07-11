@@ -9,4 +9,5 @@ public interface ProductService {
 
     List<Product> toList();
     Optional<Product> findById(Long id);
+    void deleteById(Long id);
 }

@@ -19,4 +19,10 @@ public class ProductServiceImpl implements ProductService {
 
         return toList().stream().filter(p -> p.getId().equals(id)).findAny();
     }
+
+    @Override
+    public void deleteById(Long id) {
+
+        this.findById(id).ifPresent(p -> p.setId(null));
+    }
 }

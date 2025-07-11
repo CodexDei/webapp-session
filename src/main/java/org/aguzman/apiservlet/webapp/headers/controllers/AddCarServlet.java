@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.aguzman.apiservlet.webapp.headers.models.Cart;
-import org.aguzman.apiservlet.webapp.headers.models.ItemCar;
+import org.aguzman.apiservlet.webapp.headers.models.ItemCart;
 import org.aguzman.apiservlet.webapp.headers.models.Product;
 import org.aguzman.apiservlet.webapp.headers.services.ProductService;
 import org.aguzman.apiservlet.webapp.headers.services.ProductServiceImpl;
@@ -26,7 +26,7 @@ public class AddCarServlet extends HttpServlet {
         Optional<Product> optionalProduct = service.findById(id);
         if (optionalProduct.isPresent()){
 
-            ItemCar item = new ItemCar(1, optionalProduct.get());
+            ItemCart item = new ItemCart(1, optionalProduct.get());
             HttpSession session = req.getSession();
             Cart cart;
 

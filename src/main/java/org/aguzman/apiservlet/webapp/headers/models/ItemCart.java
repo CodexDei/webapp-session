@@ -2,12 +2,12 @@ package org.aguzman.apiservlet.webapp.headers.models;
 
 import java.util.Objects;
 
-public class ItemCar {
+public class ItemCart {
 
     private int quantity;
     private Product product;
 
-    public ItemCar(int quantity, Product product){
+    public ItemCart(int quantity, Product product){
 
         this.quantity = quantity;
         this.product = product;
@@ -37,9 +37,8 @@ public class ItemCar {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        ItemCar itemCar = (ItemCar) o;
-        return Objects.equals(product.getId(), itemCar.product.getId()) &&
-               Objects.equals(product.getName(), itemCar.product.getName());
+        ItemCart itemCart = (ItemCart) o;
+        return Objects.equals(product.getId(), itemCart.product.getId()) &&
+               Objects.equals(product.getName(), itemCart.product.getName());
     }
-
 }
