@@ -6,11 +6,11 @@ import java.util.Optional;
 
 public class Cart {
 
-    public List<ItemCart> items;
+    private List<ItemCart> items;
 
     public Cart(){
 
-        items = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public List<ItemCart> getItems() {
@@ -30,7 +30,7 @@ public class Cart {
             }
 
         }else{
-            items.add(itemCart);
+            this.items.add(itemCart);
         }
     }
 
@@ -38,4 +38,36 @@ public class Cart {
 
         return items.stream().mapToInt(ItemCart::getTotal).sum();
     }
+
+
+    public void removeProducts(List<String> productsId) {
+
+        if (productsId != null){
+
+            productsId.forEach(productoId -> removeProduct(productoId));
+        }
+    }
+
+    private void removeProduct(String productId) {
+
+        Optional<ItemCart> product = findProduct(productId);
+        product.ifPresent(itemCart -> items.remove(itemCart));
+    }
+
+    public void updateQuantity(String productId, int quantity){
+
+        Optional<ItemCart> product = findProduct(productId);
+        product.ifPresent(itemCart -> itemCart.setQuantity(quantity));
+    }
+
+    private Optional<ItemCart> findProduct(String productId) {
+
+        return items.stream()
+                .filter(item -> productId.equals(Long.toString(item.getProduct().getId())))
+                .findAny();
+    }
+
+
+
+
 }

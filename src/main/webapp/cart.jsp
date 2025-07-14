@@ -19,7 +19,7 @@ Cart cart = (Cart) session.getAttribute("cart");
         <p> Sorry, there are no products in the shopping Cart</p>
 
     <%} else { %>
-
+    <form name="formcart" action="<%=request.getContextPath()%>/update-cart" method="post">
     <table>
         <tr>
             <th>id</th>
@@ -35,19 +35,21 @@ Cart cart = (Cart) session.getAttribute("cart");
            <td><%=item.getProduct().getId()%></td>
            <td><%=item.getProduct().getName()%></td>
            <td><%=item.getProduct().getPrice()%></td>
-           <td><input type="number" value="1"></td>
+           <td><input type="text" size="4" name="quan_<%=item.getProduct().getId()%>"
+                    value="<%=item.getQuantity()%>" /></td>
            <td><%=item.getTotal()%></td>
-           <td><input type="checkbox" name="delete" value="<%=item.getProduct().getId()%>"></td>
+           <td><input type="checkbox" name="deleteProduct" value="<%=item.getProduct().getId()%>"></td>
         </tr>
-        <%} %>
+        <%}%>
 
         <tr>
             <td colspan="4" style="text-align: right">Total:</td>
             <td><%=cart.getTotal()%></td>
         </tr>
     </table>
+    <p><a href="javascript:document.formcart.submit();">Update</a></p>
+    </form>
     <% }%>
-    <p><a href="<%=request.getContextPath()%>/update-cart">Update</a></p>
     <p><a href="<%=request.getContextPath()%>/products">Continue Shopping</a></p>
     <p><a href="<%=request.getContextPath()%>/index.html">Return</a></p>
 </body>
