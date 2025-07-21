@@ -13,9 +13,6 @@ public class Cart {
         this.items = new ArrayList<>();
     }
 
-    public List<ItemCart> getItems() {
-        return items;
-    }
 
     public void addItems(ItemCart itemCart){
 
@@ -32,6 +29,9 @@ public class Cart {
         }else{
             this.items.add(itemCart);
         }
+    }
+    public List<ItemCart> getItems() {
+        return items;
     }
 
     public int getTotal(){

@@ -16,7 +16,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/update-cart")
+@WebServlet("/cart/update")
 public class UpdateCartServlet extends HttpServlet {
 
     @Override
@@ -30,7 +30,7 @@ public class UpdateCartServlet extends HttpServlet {
             updateProducts(req,cart);
             updateQuantities(req,cart);
         }
-        resp.sendRedirect(req.getContextPath() + "/view-cart");
+        resp.sendRedirect(req.getContextPath() + "/cart/view");
     }
 
     private void updateQuantities(HttpServletRequest req, Cart cart) {

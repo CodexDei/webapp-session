@@ -19,7 +19,7 @@ Cart cart = (Cart) session.getAttribute("cart");
         <p> Sorry, there are no products in the shopping Cart</p>
 
     <%} else { %>
-    <form name="formcart" action="<%=request.getContextPath()%>/update-cart" method="post">
+    <form name="formcart" action="<%=request.getContextPath()%>/cart/update" method="post">
     <table>
         <tr>
             <th>id</th>

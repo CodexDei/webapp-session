@@ -1,7 +1,9 @@
 org\aguzman\apiservlet\webapp\headers\models\Cart.class
 org\aguzman\apiservlet\webapp\headers\services\LoginService.class
 org\aguzman\apiservlet\webapp\headers\services\ProductService.class
+org\aguzman\apiservlet\webapp\headers\filters\LoginFilter.class
 org\aguzman\apiservlet\webapp\headers\models\ItemCart.class
+org\aguzman\apiservlet\webapp\headers\listeners\AplicationListener.class
 org\aguzman\apiservlet\webapp\headers\services\ProductServiceImpl.class
 org\aguzman\apiservlet\webapp\headers\controllers\LogoutServlet.class
 org\aguzman\apiservlet\webapp\headers\models\Product.class

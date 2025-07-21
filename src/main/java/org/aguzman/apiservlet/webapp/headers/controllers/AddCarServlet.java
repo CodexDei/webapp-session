@@ -15,7 +15,7 @@ import org.aguzman.apiservlet.webapp.headers.services.ProductServiceImpl;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/add-cart")
+@WebServlet("/cart/add")
 public class AddCarServlet extends HttpServlet {
 
     @Override
@@ -28,18 +28,9 @@ public class AddCarServlet extends HttpServlet {
 
             ItemCart item = new ItemCart(1, optionalProduct.get());
             HttpSession session = req.getSession();
-            Cart cart;
-
-            if (session.getAttribute("cart") == null){
-
-                cart = new Cart();
-                session.setAttribute("cart", cart);
-
-            }else {
-                cart = (Cart) session.getAttribute("cart");
-            }
+            Cart cart= (Cart) session.getAttribute("cart");
             cart.addItems(item);
         }
-        resp.sendRedirect(req.getContextPath() + "/view-cart");
+        resp.sendRedirect(req.getContextPath() + "/cart/view");
     }
 }
