@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04724ab1-dc6a-40cc-b0b3-aa961137134f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/filters/ConnectionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/filters/TimeElapsedFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/util/DataBaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/repositories/ProductRepositoryJdbcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/repositories/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
