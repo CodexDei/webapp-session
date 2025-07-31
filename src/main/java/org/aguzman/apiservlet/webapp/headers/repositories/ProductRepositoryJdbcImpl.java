@@ -2,10 +2,7 @@ package org.aguzman.apiservlet.webapp.headers.repositories;
 
 import org.aguzman.apiservlet.webapp.headers.models.Product;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +17,7 @@ public class ProductRepositoryJdbcImpl implements Repository<Product>{
 
 
     @Override
-    public List<Product> List() throws SQLException {
+    public List<Product> list() throws SQLException {
 
         List<Product> products = new ArrayList<>();
 
@@ -36,18 +33,26 @@ public class ProductRepositoryJdbcImpl implements Repository<Product>{
         }
     }
 
-    private static Product getProduct(ResultSet rs) throws SQLException {
-        Product p = new Product();
-        p.setId(rs.getLong("idproductos"));
-        p.setName(rs.getString("nombre"));
-        p.setPrice(rs.getInt("precio"));
-        p.setType(rs.getString("categoria"));
-        return p;
-    }
 
     @Override
     public Product find(Long id) throws SQLException {
-        return null;
+
+        Product product = null;
+
+        try(PreparedStatement stmt = conn.prepareStatement("SELECT p.*, c.nombre_categoria as categoria FROM productos as p " +
+                " INNER JOIN categorias as c ON (p.categoria_id = c.idcategorias) WHERE p.idproductos = ?")){
+
+            stmt.setLong(1,id);
+
+            try(ResultSet rs = stmt.executeQuery()){
+
+                if (rs.next()){
+
+                    product = getProduct(rs);
+                }
+            }
+        return product;
+        }
     }
 
     @Override
@@ -58,5 +63,14 @@ public class ProductRepositoryJdbcImpl implements Repository<Product>{
     @Override
     public void delete(Long id) throws SQLException {
 
+    }
+
+    private static Product getProduct(ResultSet rs) throws SQLException {
+        Product p = new Product();
+        p.setId(rs.getLong("idproductos"));
+        p.setName(rs.getString("nombre"));
+        p.setPrice(rs.getInt("precio"));
+        p.setType(rs.getString("categoria"));
+        return p;
     }
 }

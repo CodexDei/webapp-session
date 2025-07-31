@@ -7,14 +7,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.aguzman.apiservlet.webapp.headers.models.Cart;
-import org.aguzman.apiservlet.webapp.headers.services.ProductService;
-import org.aguzman.apiservlet.webapp.headers.services.ProductServiceImpl;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Optional;
 
 @WebServlet("/cart/update")
 public class UpdateCartServlet extends HttpServlet {

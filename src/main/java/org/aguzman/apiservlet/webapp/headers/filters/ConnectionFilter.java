@@ -3,6 +3,7 @@ package org.aguzman.apiservlet.webapp.headers.filters;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
+import org.aguzman.apiservlet.webapp.headers.services.ServiceJdbcException;
 import org.aguzman.apiservlet.webapp.headers.util.DataBaseConnection;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class ConnectionFilter implements Filter {
                 filterChain.doFilter(servletRequest,servletResponse);
                 conn.commit();
 
-            }catch (SQLException e) {
+            }catch (SQLException | ServiceJdbcException e) {
                 conn.rollback();
                 ((HttpServletResponse) (servletResponse)).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
                 e.printStackTrace();

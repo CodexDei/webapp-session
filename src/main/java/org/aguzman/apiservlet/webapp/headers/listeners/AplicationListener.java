@@ -18,7 +18,7 @@ public class AplicationListener implements ServletContextListener,
 
         this.servletContext = sce.getServletContext();
         servletContext.log("Initializing the application");
-        servletContext.setAttribute("messageApp","Some global value of the app");
+        servletContext.setAttribute("message","Some global value of the app");
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AplicationListener implements ServletContextListener,
         //por el momento solo un mensaje en consola como en los otros metodos
         servletContext.log("Initializing the request");
         ServletRequest request = sre.getServletRequest();
-        request.setAttribute("messageReq","storing some value for the request");
+        request.setAttribute("message","storing some value for the request");
     }
 
     @Override

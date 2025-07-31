@@ -11,8 +11,10 @@ import org.aguzman.apiservlet.webapp.headers.models.ItemCart;
 import org.aguzman.apiservlet.webapp.headers.models.Product;
 import org.aguzman.apiservlet.webapp.headers.services.ProductService;
 import org.aguzman.apiservlet.webapp.headers.services.ProductServiceImpl;
+import org.aguzman.apiservlet.webapp.headers.services.ProductServiceJdbcImpl;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.Optional;
 
 @WebServlet("/cart/add")
@@ -22,7 +24,8 @@ public class AddCarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Long id = Long.parseLong(req.getParameter("id"));
-        ProductService service = new ProductServiceImpl();
+        Connection conn = (Connection) req.getAttribute("conn");
+        ProductService service = new ProductServiceJdbcImpl(conn);
         Optional<Product> optionalProduct = service.findById(id);
         if (optionalProduct.isPresent()){
 

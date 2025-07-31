@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface Repository<T> {
 
-    List<T> List() throws SQLException;
+    List<T> list() throws SQLException;
     T find(Long id) throws SQLException;
     void save(T t) throws SQLException;
     void delete(Long id) throws SQLException;
