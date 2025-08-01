@@ -15,6 +15,7 @@
 <h1>Product List</h1>
 <% if(username.isPresent()){ %>
     <div>Hello <%=username.get()%>!!, Welcome!!</div>
+    <p><a href="<%=request.getContextPath()%>/products/form">Create [+]</a></p>
 <% } %>
 <table>
     <tr>
@@ -30,7 +31,7 @@
     <tr>
         <td><%=p.getId()%></td>
         <td><%=p.getName()%></td>
-        <td><%=p.getType()%></td>
+        <td><%=p.getCategory().getName()%></td>
         <% if(username.isPresent()){ %>
         <td><%=p.getPrice()%></td>
         <td><a href="<%=request.getContextPath()%>/cart/add?id=<%=p.getId()%>">Add Cart</a></td>

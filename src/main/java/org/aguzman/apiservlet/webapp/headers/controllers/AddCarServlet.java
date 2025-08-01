@@ -10,7 +10,6 @@ import org.aguzman.apiservlet.webapp.headers.models.Cart;
 import org.aguzman.apiservlet.webapp.headers.models.ItemCart;
 import org.aguzman.apiservlet.webapp.headers.models.Product;
 import org.aguzman.apiservlet.webapp.headers.services.ProductService;
-import org.aguzman.apiservlet.webapp.headers.services.ProductServiceImpl;
 import org.aguzman.apiservlet.webapp.headers.services.ProductServiceJdbcImpl;
 
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class AddCarServlet extends HttpServlet {
         Long id = Long.parseLong(req.getParameter("id"));
         Connection conn = (Connection) req.getAttribute("conn");
         ProductService service = new ProductServiceJdbcImpl(conn);
-        Optional<Product> optionalProduct = service.findById(id);
+        Optional<Product> optionalProduct = service.productFindById(id);
         if (optionalProduct.isPresent()){
 
             ItemCart item = new ItemCart(1, optionalProduct.get());
