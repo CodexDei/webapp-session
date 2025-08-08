@@ -7,7 +7,12 @@
     <list default="true" id="04724ab1-dc6a-40cc-b0b3-aa961137134f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/controllers/ProductFormServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/repositories/ProductRepositoryJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aguzman/apiservlet/webapp/headers/repositories/ProductRepositoryJdbcImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/webapp-session/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/webapp-session/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/webapp-session/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/webapp-session/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

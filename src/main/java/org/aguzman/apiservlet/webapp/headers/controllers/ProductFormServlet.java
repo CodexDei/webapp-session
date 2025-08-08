@@ -14,8 +14,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @WebServlet("/products/form")
 public class ProductFormServlet extends HttpServlet {
@@ -25,8 +27,25 @@ public class ProductFormServlet extends HttpServlet {
 
         Connection conn = (Connection) req.getAttribute("conn");
         ProductService service = new ProductServiceJdbcImpl(conn);
+        Long id;
+        try{
+            id = Long.valueOf(req.getParameter("id"));
+        }catch (NumberFormatException e){
+            id = 0L;
+        }
+        Product product = new Product();
+        product.setCategory(new Category());
+        if (id > 0){
+            Optional<Product> optionalProduct = service.productFindById(id);
+            if (optionalProduct.isPresent()){
+                product = optionalProduct.get();
+            }
+        }
         req.setAttribute("categories", service.categoryList());
-        req.getServletContext().getRequestDispatcher("/form.jsp").forward(req,resp);
+        req.setAttribute("product", product);
+        getServletContext().getRequestDispatcher("/form.jsp").forward(req,resp);
+
+
     }
 
     @Override
@@ -70,7 +89,10 @@ public class ProductFormServlet extends HttpServlet {
         if (sku == null || sku.isBlank()){
 
             errors.put("sku", "Sku is required");
+        } else if (sku.length() > 10) {
+            errors.put("sku", "Sku most not exceed 10 characters");
         }
+
         if (dateStr == null || dateStr.isBlank()){
 
             errors.put("registration_date", "Date Register is required");
@@ -80,18 +102,35 @@ public class ProductFormServlet extends HttpServlet {
             errors.put("category", "Invalid category");
         }
 
-        if(errors.isEmpty()){
+            LocalDate date_register;
 
-            LocalDate date_register = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            try {
+                date_register = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            }catch (DateTimeParseException e){
+                date_register = null;
+            }
+
+            Long id;
+
+            try{
+
+                id = Long.valueOf(req.getParameter("id"));
+            }catch (NumberFormatException e){
+                id = 0L;
+            }
 
             Product product = new Product();
+            product.setId(id);
             product.setName(name);
             product.setPrice(price);
             product.setSku(sku);
             product.setRegistrationDate(date_register);
+
             Category category = new Category();
             category.setId(idCategory);
             product.setCategory(category);
+
+        if(errors.isEmpty()){
 
             service.save(product);
 
@@ -99,7 +138,9 @@ public class ProductFormServlet extends HttpServlet {
 
         }else {
             req.setAttribute("errors", errors);
-            doGet(req, resp);
+            req.setAttribute("categories", service.categoryList());
+            req.setAttribute("product", product);
+            getServletContext().getRequestDispatcher("/form.jsp").forward(req,resp);
         }
     }
 }

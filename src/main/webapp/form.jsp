@@ -1,8 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"
-import="java.util.*, org.aguzman.apiservlet.webapp.headers.models.*"%>
+import="java.util.*, java.time.format.*, org.aguzman.apiservlet.webapp.headers.models.*"%>
 <%
 List<Category> categories = (List<Category>) request.getAttribute("categories");
 Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
+Product product = (Product) request.getAttribute("product");
+String date = product.getRegistrationDate() != null?
+product.getRegistrationDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) : "";
 %>
 
 
@@ -18,7 +21,7 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
         <div>
             <label for="name">Name</label>
             <div>
-                <input type="text" name="name" id="name" >
+                <input type="text" name="name" id="name" value="<%=product.getName() !=null ? product.getName() : ""%>">
             </div>
             <%if(errors != null && errors.containsKey("name")){%>
                 <div style="color:red;"><%=errors.get("name")%></div>
@@ -27,7 +30,7 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
         <div>
             <label for="price">Price</label>
             <div>
-                <input type="number" name="price" id="price" >
+                <input type="number" name="price" id="price" value="<%=product.getPrice() > 0 ? product.getPrice() : ""%>">
             </div>
             <%if(errors != null && errors.containsKey("price")){%>
                 <div style="color:red;"><%=errors.get("price")%></div>
@@ -36,7 +39,7 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
         <div>
             <label for="sku">Sku</label>
             <div>
-                <input type="text" name="sku" id="sku">
+                <input type="text" name="sku" id="sku" value="<%=product.getSku() !=null ? product.getSku() : ""%>">
             </div>
             <%if(errors != null && errors.containsKey("sku")){%>
                 <div style="color:red;"><%=errors.get("sku")%></div>
@@ -45,7 +48,7 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
         <div>
             <label for="registration_date">Registration Date</label>
             <div>
-                <input type="date" name="registration_date" id="registration_date">
+                <input type="date" name="registration_date" id="registration_date" value="<%=date%>">
             </div>
             <%if(errors != null && errors.containsKey("registration_date")){%>
                 <div style="color:red;"><%=errors.get("registration_date")%></div>
@@ -57,7 +60,7 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
                 <select name="category" id="category">
                     <option value="">--- Select ----</option>
                     <%for(Category c : categories){%>
-                    <option value="<%=c.getId()%>"><%=c.getName()%></option>
+                    <option value="<%=c.getId()%>" <%=c.getId().equals(product.getCategory().getId())? "selected" : ""%> ><%=c.getName()%></option>
                     <%}%>
 
                 </select>
@@ -67,7 +70,8 @@ Map<String,String> errors = (Map<String,String>) request.getAttribute("errors");
             <% } %>
         </div>
 
-        <div><input type="submit" value="Create"></div>
+        <div><input type="submit" value= "<%=(product.getId() != null && product.getId() > 0) ? "Edit" : "Create"%>"></div>
+        <input type="hidden" name="id" value="<%=product.getId()%>">
     </form>
 
 </body>
